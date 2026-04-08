@@ -25,6 +25,7 @@ mod helpers;
 mod html_options;
 mod keywords;
 mod plugins; // Now a module directory with submodules
+mod serialization;
 mod types;
 mod validation;
 
@@ -175,6 +176,9 @@ fn _internal_bindings(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(ffi::get_error_details, m)?)?;
     m.add_function(wrap_pyfunction!(ffi::classify_error, m)?)?;
     m.add_function(wrap_pyfunction!(ffi::error_code_name, m)?)?;
+
+    m.add_function(wrap_pyfunction!(serialization::serialize_to_toon, m)?)?;
+    m.add_function(wrap_pyfunction!(serialization::serialize_to_json, m)?)?;
 
     Ok(())
 }

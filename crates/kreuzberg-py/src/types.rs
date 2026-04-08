@@ -84,6 +84,10 @@ pub struct ExtractionResult {
     uris: Option<Py<PyList>>,
 
     code_intelligence: Option<Py<PyAny>>,
+
+    /// Cached JSON serialization of the original Rust ExtractionResult.
+    /// Used by serialize_to_toon/serialize_to_json to avoid lossy Python→Rust round-trip.
+    pub(crate) result_json: String,
 }
 
 #[pymethods]
@@ -330,6 +334,11 @@ impl ExtractionResult {
         output_format: Option<&str>,
         result_format: Option<&str>,
     ) -> PyResult<Self> {
+        // Serialize the full result to JSON before destructuring for serialize_to_toon/json
+        let result_json = serde_json::to_string(&result).map_err(|e| {
+            PyErr::new::<pyo3::exceptions::PyRuntimeError, _>(format!("Failed to serialize result: {}", e))
+        })?;
+
         let metadata_dict = PyDict::new(py);
 
         if let Some(title) = &result.metadata.title {
@@ -776,6 +785,7 @@ impl ExtractionResult {
             // code_intelligence will be populated once the core ExtractionResult
             // adds the field; for now, always None.
             code_intelligence: None,
+            result_json,
         })
     }
 }
