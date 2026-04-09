@@ -28,7 +28,7 @@ pip install "kreuzberg[all]"
 
 ## Core Functions
 
-### Batch_extract_bytes()
+### batch_extract_bytes()
 
 Extract content from multiple byte arrays in parallel (asynchronous).
 
@@ -54,7 +54,7 @@ Same as [`batch_extract_bytes_sync()`](#batch_extract_bytes_sync).
 
 ---
 
-### Batch_extract_bytes_sync()
+### batch_extract_bytes_sync()
 
 Extract content from multiple byte arrays in parallel (synchronous).
 
@@ -83,7 +83,7 @@ def batch_extract_bytes_sync(
 
 ---
 
-### Batch_extract_files()
+### batch_extract_files()
 
 Extract content from multiple files in parallel (asynchronous).
 
@@ -108,7 +108,7 @@ Same as [`batch_extract_files_sync()`](#batch_extract_files_sync).
 
 ---
 
-### Batch_extract_files_sync()
+### batch_extract_files_sync()
 
 Extract content from multiple files in parallel (synchronous).
 
@@ -147,7 +147,7 @@ for path, result in zip(paths, results):
 
 ---
 
-### Extract_bytes()
+### extract_bytes()
 
 Extract content from bytes (asynchronous).
 
@@ -173,7 +173,7 @@ Same as [`extract_bytes_sync()`](#extract_bytes_sync).
 
 ---
 
-### Extract_bytes_sync()
+### extract_bytes_sync()
 
 Extract content from bytes (synchronous).
 
@@ -214,7 +214,7 @@ print(result.content)
 
 ---
 
-### Extract_file()
+### extract_file()
 
 Extract content from a file (asynchronous).
 
@@ -257,7 +257,7 @@ asyncio.run(main())
 
 ---
 
-### Extract_file_sync()
+### extract_file_sync()
 
 Extract content from a file (synchronous).
 
@@ -334,7 +334,7 @@ result = extract_file_sync(
 
 ### ExtractionConfig
 
-!!! Warning "Deprecated API"
+!!! warning "Deprecated API"
 The `force_ocr` parameter has been deprecated in favor of the new `ocr` configuration object.
 
     **Old pattern (no longer supported):**
@@ -807,7 +807,7 @@ if result.detected_languages:
     print(f"Languages: {', '.join(result.detected_languages)}")
 ```
 
-#### Pages
+#### pages
 
 **Type**: `list[PageContent] | None`
 
@@ -1178,9 +1178,9 @@ See [Error Handling Reference](errors.md) for detailed error documentation and b
 
 ## PDF Rendering
 
-!!! Info "Added in v4.6.2"
+!!! info "Added in v4.6.2"
 
-### Render_pdf_page()
+### render_pdf_page()
 
 Render a single PDF page as a PNG image.
 
@@ -1219,7 +1219,7 @@ with open("first_page.png", "wb") as f:
 
 ## Embeddings
 
-### Embed_sync()
+### embed_sync()
 
 Generate embeddings for a list of texts synchronously.
 
@@ -1247,7 +1247,7 @@ def embed_sync(
 
 ---
 
-### Embed()
+### embed()
 
 Async variant of `embed_sync()`.
 

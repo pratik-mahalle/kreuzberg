@@ -50,7 +50,7 @@ kreuzberg = { version = "4.0", features = ["pdf", "ocr", "chunking", "api"] }
 
 ## Core Functions
 
-### Extract_file_sync()
+### extract_file_sync()
 
 Extract content from a file (synchronous, blocking). **Requires the `tokio-runtime` feature.**
 
@@ -121,7 +121,7 @@ fn main() -> kreuzberg::Result<()> {
 
 ---
 
-### Extract_file()
+### extract_file()
 
 Extract content from a file (asynchronous). **Requires the `tokio-runtime` feature.**
 
@@ -161,7 +161,7 @@ async fn main() -> kreuzberg::Result<()> {
 
 ---
 
-### Extract_bytes_sync()
+### extract_bytes_sync()
 
 Extract content from bytes (synchronous, blocking).
 
@@ -204,7 +204,7 @@ fn main() -> kreuzberg::Result<()> {
 
 ---
 
-### Extract_bytes()
+### extract_bytes()
 
 Extract content from bytes (asynchronous). **Requires the `tokio-runtime` feature.**
 
@@ -228,7 +228,7 @@ Same as [`extract_bytes_sync()`](#extract_bytes_sync).
 
 ---
 
-### Batch_extract_file_sync()
+### batch_extract_file_sync()
 
 Extract content from multiple files in parallel (synchronous, blocking). **Requires the `tokio-runtime` feature.**
 
@@ -274,7 +274,7 @@ fn main() -> kreuzberg::Result<()> {
 
 ---
 
-### Batch_extract_file()
+### batch_extract_file()
 
 Extract content from multiple files in parallel (asynchronous). **Requires the `tokio-runtime` feature.**
 
@@ -319,7 +319,7 @@ async fn main() -> kreuzberg::Result<()> {
 
 ---
 
-### Batch_extract_bytes_sync()
+### batch_extract_bytes_sync()
 
 Extract content from multiple byte arrays in parallel (synchronous, blocking).
 
@@ -345,7 +345,7 @@ pub fn batch_extract_bytes_sync(
 
 ---
 
-### Batch_extract_bytes()
+### batch_extract_bytes()
 
 Extract content from multiple byte arrays in parallel (asynchronous). **Requires the `tokio-runtime` feature.**
 
@@ -1095,7 +1095,7 @@ pub struct ExtractedImage {
 - `description` (Option<String>): Optional description
 - `ocr_result` (Option<Box<ExtractionResult>>): Nested OCR result if image was OCRed
 
-#### Pages
+#### pages
 
 **Type**: `Option<Vec<PageContent>>`
 
@@ -1407,7 +1407,7 @@ fn main() -> kreuzberg::Result<()> {
 
 ## Embeddings
 
-### Embed_texts()
+### embed_texts()
 
 Generate embeddings for a list of texts.
 
@@ -1435,7 +1435,7 @@ Requires the `embeddings` feature.
 
 ---
 
-### Embed_texts_async()
+### embed_texts_async()
 
 Async variant of `embed_texts()`. Requires both the `embeddings` and `tokio-runtime` features.
 
@@ -1454,9 +1454,9 @@ Same return type as `embed_texts()`.
 
 ## PDF Rendering
 
-!!! Info "Added in v4.6.2"
+!!! info "Added in v4.6.2"
 
-### Render_pdf_page_to_png()
+### render_pdf_page_to_png()
 
 Render a single page of a PDF as a PNG image.
 
@@ -1494,7 +1494,7 @@ std::fs::write("first_page.png", &png)?;
 
 ---
 
-### Render_pdf_file_to_png_pages()
+### render_pdf_file_to_png_pages()
 
 Render each page of a PDF as a PNG image.
 
@@ -1703,7 +1703,7 @@ Or: `kreuzberg::plugins::register_extractor(Arc::new(MyCustomExtractor))?`. The 
 
 ## MIME Type Detection
 
-### Detect_mime_type()
+### detect_mime_type()
 
 Detect MIME type from file path (by extension).
 
@@ -1740,7 +1740,7 @@ let mime_type = detect_mime_type("document.pdf", false)?;
 
 ---
 
-### Validate_mime_type()
+### validate_mime_type()
 
 Validate that a MIME type is supported. Returns the validated (possibly normalized) MIME type string, or an error if unsupported.
 
@@ -1765,7 +1765,7 @@ println!("PDF is supported: {}", mime);
 
 ---
 
-### Detect_mime_type_from_bytes()
+### detect_mime_type_from_bytes()
 
 Detect MIME type from raw bytes (magic numbers / content sniffing).
 
@@ -1786,7 +1786,7 @@ let mime = detect_mime_type_from_bytes(&data)?;
 
 ---
 
-### Detect_or_validate()
+### detect_or_validate()
 
 Get MIME type from path or validate a provided MIME type. Returns the MIME type if path is given (from extension) or if the provided MIME is valid.
 
@@ -1798,7 +1798,7 @@ pub fn detect_or_validate(path: Option<&Path>, mime_type: Option<&str>) -> Resul
 
 ---
 
-### Get_extensions_for_mime()
+### get_extensions_for_mime()
 
 Return file extensions associated with a MIME type.
 

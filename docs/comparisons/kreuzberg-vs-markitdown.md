@@ -76,6 +76,6 @@ What happens after extraction.
 
 ---
 
-!!! Info "Benchmarks"
+!!! info "Benchmarks"
 
     For extraction speed and quality comparisons between Kreuzberg and MarkItDown, see the [live benchmark dashboard](https://kreuzberg.dev/benchmarks).

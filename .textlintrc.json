@@ -6,7 +6,6 @@
 		}
 	},
 	"rules": {
-		"no-todo": true,
 		"no-start-duplicated-conjunction": true,
 		"no-empty-section": true,
 		"terminology": {
@@ -24,9 +23,6 @@
 		},
 		"common-misspellings": true,
 		"stop-words": {
-			"severity": "warning"
-		},
-		"en-capitalization": {
 			"severity": "warning"
 		}
 	}

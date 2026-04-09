@@ -15,5 +15,5 @@ Kreuzberg integrates with AI frameworks, databases, and search engines — bring
 | CrewAI | [CrewAI](https://www.crewai.com/) | [`kreuzberg-crewai`](https://pypi.org/project/kreuzberg-crewai/) | [GitHub](https://github.com/kreuzberg-dev/kreuzberg-crewai) |
 | SurrealDB | [SurrealDB](https://surrealdb.com/) | [`kreuzberg-surrealdb`](https://pypi.org/project/kreuzberg-surrealdb/) | [SurrealDB](surrealdb.md) |
 
-!!! Tip "Building a new integration?"
+!!! tip "Building a new integration?"
     Explore existing integrations on [GitHub](https://github.com/kreuzberg-dev) for reference.

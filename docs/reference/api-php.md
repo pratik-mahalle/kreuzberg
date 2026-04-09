@@ -347,7 +347,7 @@ $results = $kreuzberg->batchExtractBytes($dataList, $mimeTypes);
 
 ## Procedural Functions
 
-### Extract_file()
+### extract_file()
 
 Extract content from a file (procedural API).
 
@@ -387,7 +387,7 @@ $result = extract_file('document.pdf', config: $config);
 
 ---
 
-### Extract_bytes()
+### extract_bytes()
 
 Extract content from bytes (procedural API).
 
@@ -411,7 +411,7 @@ Same as [`Kreuzberg::extractBytes()`](#kreuzbergextractbytes).
 
 ---
 
-### Batch_extract_files()
+### batch_extract_files()
 
 Extract content from multiple files in parallel (procedural API).
 
@@ -449,7 +449,7 @@ foreach ($results as $result) {
 
 ---
 
-### Batch_extract_bytes()
+### batch_extract_bytes()
 
 Extract content from multiple byte arrays in parallel (procedural API).
 
@@ -500,7 +500,7 @@ Batch-level fields (`$maxConcurrentExtractions`, `$useCache`, `$securityLimits`)
 
 ---
 
-### Detect_mime_type()
+### detect_mime_type()
 
 Detect MIME type from file bytes.
 
@@ -532,7 +532,7 @@ echo $mimeType; // "application/pdf"
 
 ---
 
-### Detect_mime_type_from_path()
+### detect_mime_type_from_path()
 
 Detect MIME type from file path.
 
@@ -565,7 +565,7 @@ echo $mimeType; // "application/pdf"
 
 ## Configuration
 
-!!! Warning "Deprecated API"
+!!! warning "Deprecated API"
     The `$outputFormat` property has been deprecated in favor of the new configuration object approach.
 
     **Old pattern (no longer supported):**
@@ -1539,7 +1539,7 @@ if ($result->pages !== null) {
 
 ## Embeddings
 
-### Embed()
+### embed()
 
 Generate embeddings for a list of texts.
 
@@ -1566,9 +1566,9 @@ public function embed(array $texts, ?EmbeddingConfig $config = null): array
 
 ## PDF Rendering
 
-!!! Info "Added in v4.6.2"
+!!! info "Added in v4.6.2"
 
-### Render_pdf_page()
+### render_pdf_page()
 
 Render a single page of a PDF as a PNG image.
 
@@ -2393,14 +2393,14 @@ The Kreuzberg native extension must be compiled and installed for your PHP versi
 **Native Dependencies:**
 
 - **Tesseract OCR** (for OCR support):
-  - MacOS: `brew install tesseract`
+  - macOS: `brew install tesseract`
   - Ubuntu: `apt-get install tesseract-ocr`
   - Windows: Download from [GitHub releases](https://github.com/tesseract-ocr/tesseract)
 
 **Platforms:**
 
 - Linux (x64, arm64)
-- MacOS (x64, arm64)
+- macOS (x64, arm64)
 - Windows (x64)
 
 ---

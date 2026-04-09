@@ -85,6 +85,6 @@ Where each tool fits in the broader stack.
 
 ---
 
-!!! Info "Benchmarks"
+!!! info "Benchmarks"
 
     For extraction speed and quality comparisons between Kreuzberg and Apache Tika, see the [live benchmark dashboard](https://kreuzberg.dev/benchmarks).

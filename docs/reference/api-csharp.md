@@ -21,7 +21,7 @@ dotnet add package Kreuzberg
 **Requirements:**
 
 - .NET 10.0 or later
-- Libkreuzberg_ffi native library (auto-loaded from NuGet)
+- libkreuzberg_ffi native library (auto-loaded from NuGet)
 - Optional: Tesseract or EasyOCR/PaddleOCR for OCR functionality
 
 ## Using the API
@@ -1751,7 +1751,7 @@ Metadata specific to XML documents.
 
 ## PDF Rendering
 
-!!! Info "Added in v4.6.2"
+!!! info "Added in v4.6.2"
 
 ### KreuzbergClient.RenderPdfPage()
 

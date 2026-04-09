@@ -1,11 +1,11 @@
-Package main
+package main
 
-Import (
+import (
     "fmt"
     "Kreuzberg"
 )
 
-Func main() {
+func main() {
     config := &kreuzberg.ExtractionConfig{
         Pages: &kreuzberg.PageConfig{
             ExtractPages: true,

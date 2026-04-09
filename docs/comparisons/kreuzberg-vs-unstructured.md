@@ -83,6 +83,6 @@ Where your documents go and what you pay.
 
 ---
 
-!!! Tip "Switching over?"
+!!! tip "Switching over?"
 
     If you're currently using Unstructured and want to try Kreuzberg, check out the [Migration Guide](../migration/from-unstructured.md) for a step-by-step walkthrough.

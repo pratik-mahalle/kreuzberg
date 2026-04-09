@@ -1,8 +1,8 @@
-Use Kreuzberg::extract_file_sync;
+use Kreuzberg::extract_file_sync;
 
-Let result = extract_file_sync("document.pdf", &Default::default())?;
+let result = extract_file_sync("document.pdf", &Default::default())?;
 
-If let Some(pages) = result.metadata.pages {
+if let Some(pages) = result.metadata.pages {
     if let Some(boundaries) = pages.boundaries {
         for boundary in boundaries.iter().take(3) {
             let page_text = &result.content[boundary.byte_start..boundary.byte_end];

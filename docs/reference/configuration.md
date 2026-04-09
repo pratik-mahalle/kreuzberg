@@ -922,7 +922,7 @@ type = "tokenizer"
 model = "Xenova/gpt-4o"
 ```
 
-!!! Note
+!!! note
     Token-based sizing requires the `chunking-tokenizers` feature to be enabled.
 
 #### YAML Format
@@ -1857,7 +1857,7 @@ PDF-specific extraction configuration.
 | `hierarchy`                | `HierarchyConfig?` | `None`  | Hierarchy extraction configuration (None = hierarchy extraction disabled) |
 | `allow_single_column_tables` <span class="version-badge">v4.5.0</span> | `bool`             | `false` | Relax min column count from 2-3 to 1, allowing single-column table extraction |
 
-!!! Note "Bounding boxes require explicit opt-in"
+!!! note "Bounding boxes require explicit opt-in"
     Element bounding box coordinates are **not** extracted by default. To enable them, set `pdf_options=PdfConfig(hierarchy=HierarchyConfig(enabled=True, include_bbox=True))`. Coordinates are currently only available for **text elements** (headings and body blocks) — table and image regions do not carry per-element bbox data from this path.
 
 ### Example
@@ -2434,7 +2434,7 @@ The `ocr_coverage_threshold` parameter enables smart OCR triggering:
 
 ````
 
-If (text_block_coverage < ocr_coverage_threshold) {
+if (text_block_coverage < ocr_coverage_threshold) {
 run_ocr() // Trigger OCR on pages with insufficient text coverage
 }
 
@@ -3130,7 +3130,7 @@ The `ocr_coverage_threshold` parameter enables smart OCR triggering:
 
 ````
 
-If (text_block_coverage < ocr_coverage_threshold) {
+if (text_block_coverage < ocr_coverage_threshold) {
 run_ocr() // Trigger OCR on pages with insufficient text coverage
 }
 
@@ -3620,7 +3620,7 @@ Configuration for ONNX-based document layout detection. Analyzes PDF pages to id
 
 **Feature Gate**: Requires the `layout-detection` Cargo feature. Layout detection is only available when this feature is enabled.
 
-!!! Warning "`preset` removed"
+!!! warning "`preset` removed"
     The `preset` field was removed. If present in a config file it is silently ignored. The RT-DETR v2 model is now the only layout detection model.
 
 ### Fields
@@ -3631,7 +3631,7 @@ Configuration for ONNX-based document layout detection. Analyzes PDF pages to id
 | `apply_heuristics`     | `bool`     | `true`   | Apply postprocessing heuristics (containment filtering, deduplication)                         |
 | `table_model`          | `str?`     | `None` (uses `"tatr"`) | Table structure recognition model. Options: `"tatr"` (30MB, default), `"slanet_wired"` (365MB, bordered tables), `"slanet_wireless"` (365MB, borderless tables), `"slanet_plus"` (7.78MB, lightweight), `"slanet_auto"` (~737MB, classifier-routed). See [Table Structure Models](../guides/layout-detection.md#table-structure-models). |
 
-!!! Note "Table detection requires layout detection"
+!!! note "Table detection requires layout detection"
     Table extraction only runs when `layout` is set in `ExtractionConfig`. Setting only `table_model` has no effect without an enclosing `LayoutDetectionConfig`.
 
 ### Configuration Examples

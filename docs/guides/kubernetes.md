@@ -88,7 +88,7 @@ env:
 
 **Pre-installed languages:** `eng`, `spa`, `fra`, `deu`, `ita`, `por`, `chi_sim`, `chi_tra`, `jpn`, `ara`, `rus`, `hin`
 
-!!! Note "Tesseract Version"
+!!! note "Tesseract Version"
     The path varies by version. Verify yours with `tesseract --version` inside the container if using a custom base image.
 
 ### Custom Languages via ConfigMap
@@ -351,7 +351,7 @@ spec:
 kubectl apply -f production-deployment.yaml
 ```
 
-!!! Note "Model Persistence"
+!!! note "Model Persistence"
     Embedding models download on first use (~90 MB – 1.2 GB). Use a PVC for `/app/.kreuzberg` to avoid re-downloading on pod restart. Outside containers, models are cached in the platform-specific global cache directory (for example, `~/.cache/kreuzberg/` on Linux, `~/Library/Caches/kreuzberg/` on macOS).
 
 ## High Availability
@@ -383,7 +383,7 @@ spec:
 
 ## Troubleshooting
 
-??? Question "OCR silently failing"
+??? question "OCR silently failing"
 
     Verify `TESSDATA_PREFIX` is set and tessdata files exist:
 
@@ -392,19 +392,19 @@ spec:
     kubectl exec -it deployment/kreuzberg-api -- ls /usr/share/tesseract-ocr/5/tessdata/
     ```
 
-??? Question "Permission denied on cache directory"
+??? question "Permission denied on cache directory"
 
     Use an init container or `fsGroup` (see [Permissions](#permissions)).
 
-??? Question "OOMKilled"
+??? question "OOMKilled"
 
     Increase memory limits. Reduce OCR resource usage with `KREUZBERG_PDF_DPI=150` and single-language OCR.
 
-??? Question "Startup probe timeout"
+??? question "Startup probe timeout"
 
     Increase `failureThreshold` on the startup probe (e.g., `60` for 10-minute timeout).
 
-??? Question "Language not found"
+??? question "Language not found"
 
     Check installed languages with `kubectl exec -it deployment/kreuzberg-api -- tesseract --list-langs`. Mount custom tessdata via ConfigMap or PVC.
 

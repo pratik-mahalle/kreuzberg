@@ -158,7 +158,7 @@ Content formats control how extracted text is **rendered** inside the `content` 
 
 Wire format and content format are orthogonal. You can combine them freely, for example `--content-format markdown --format toon` produces a TOON-serialized result where the `content` field contains Markdown-formatted text.
 
-!!! Note
+!!! note
     The `--output-format` flag is a deprecated alias for `--content-format` and will be removed in a future release.
 
 ## Architecture Diagram

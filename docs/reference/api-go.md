@@ -1381,7 +1381,7 @@ Same parameters as `EmbedTexts()`, plus a `context.Context` as the first argumen
 
 ## PDF Rendering
 
-!!! Info "Added in v4.8.0"
+!!! info "Added in v4.8.0"
 
 ### RenderPdfPage
 

@@ -90,7 +90,7 @@ tesseract --list-langs
 pip install "kreuzberg[easyocr]"
 ```
 
-!!! Warning "Python 3.14"
+!!! warning "Python 3.14"
     EasyOCR is not supported on Python 3.14 due to upstream PyTorch compatibility. Use Python 3.10–3.13.
 
 ## Configuration
@@ -225,7 +225,7 @@ Process PDFs with OCR even when they have a text layer:
 
 ### Disable OCR
 
-!!! Info "Added in v4.7.0"
+!!! info "Added in v4.7.0"
 
 Skip OCR entirely, even for image files that would normally require it. When `disable_ocr` is set, image files return empty content instead of raising a `MissingDependencyError`:
 
@@ -363,7 +363,7 @@ Use a vision-language model (for example, GPT-4o, Claude) as the OCR backend. Ea
 
 For more on VLM OCR, including custom prompts, supported providers, and API key configuration, see [LLM Integration](llm-integration.md#vlm-ocr).
 
-!!! Tip "GPU Acceleration"
+!!! tip "GPU Acceleration"
     EasyOCR and PaddleOCR support GPU acceleration. Set `use_gpu=True` in your OCR config. PaddleOCR's `model_tier="server"` gives the best accuracy with GPU.
 
 ## DPI Configuration
@@ -456,7 +456,7 @@ kreuzberg extract scanned.pdf --config kreuzberg.toml --ocr true
 
 ## Troubleshooting
 
-??? Question "Tesseract not found"
+??? question "Tesseract not found"
 
     Install Tesseract and verify it's on your PATH:
 
@@ -471,7 +471,7 @@ kreuzberg extract scanned.pdf --config kreuzberg.toml --ocr true
     tesseract --version
     ```
 
-??? Question "Language not found"
+??? question "Language not found"
 
     Install the language data pack:
 
@@ -486,7 +486,7 @@ kreuzberg extract scanned.pdf --config kreuzberg.toml --ocr true
     tesseract --list-langs
     ```
 
-??? Question "Poor accuracy"
+??? question "Poor accuracy"
 
     - Increase DPI to 600 for better quality
     - Try a different backend — PaddleOCR and EasyOCR often outperform Tesseract on complex layouts
@@ -494,13 +494,13 @@ kreuzberg extract scanned.pdf --config kreuzberg.toml --ocr true
     - Use `force_ocr=True` if a PDF's embedded text layer is low quality
     - For handwritten text or very poor scans, try the VLM backend with a vision-capable model (see [LLM Integration](llm-integration.md#vlm-ocr))
 
-??? Question "Slow processing"
+??? question "Slow processing"
 
     - Reduce DPI to 150 for faster throughput
     - Enable GPU acceleration with EasyOCR or PaddleOCR (`use_gpu=True`)
     - Use batch extraction to process multiple files concurrently
 
-??? Question "Out of memory on large PDFs"
+??? question "Out of memory on large PDFs"
 
     - Reduce DPI — lower resolution uses significantly less memory
     - Process pages in smaller batches

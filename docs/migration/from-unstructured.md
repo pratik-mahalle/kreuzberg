@@ -207,7 +207,7 @@ for (const page of result.pages) {
 }
 ```
 
-### CURL
+### cURL
 
 **Unstructured**:
 

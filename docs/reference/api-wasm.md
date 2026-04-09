@@ -68,7 +68,7 @@ import { extractBytes, initWasm } from "npm:@kreuzberg/wasm@^4.2.7";
 
 ## Module Initialization
 
-### InitWasm()
+### initWasm()
 
 Initialize the WASM module. This must be called once before using any extraction functions.
 
@@ -120,7 +120,7 @@ initializeKreuzberg().catch(console.error);
 
 ---
 
-### IsInitialized()
+### isInitialized()
 
 Check if the WASM module is initialized.
 
@@ -146,7 +146,7 @@ if (!isInitialized()) {
 
 ---
 
-### GetVersion()
+### getVersion()
 
 Get the WASM module version.
 
@@ -176,7 +176,7 @@ console.log(`Using Kreuzberg ${version}`);
 
 ---
 
-### GetInitializationError()
+### getInitializationError()
 
 Get the initialization error if module failed to load. Used for debugging initialization issues.
 
@@ -194,7 +194,7 @@ function getInitializationError(): Error | null
 
 ## Core Extraction Functions
 
-### ExtractBytes()
+### extractBytes()
 
 Extract content from document bytes asynchronously.
 
@@ -273,7 +273,7 @@ console.log(result.content);
 
 ---
 
-### ExtractFile()
+### extractFile()
 
 Extract content from a file on the file system (Node.js, Deno, Bun only).
 
@@ -333,7 +333,7 @@ const result = await extractFile('./report.xlsx', null, {
 
 ---
 
-### ExtractFromFile()
+### extractFromFile()
 
 Extract content from a File or Blob (browser-friendly wrapper).
 
@@ -393,7 +393,7 @@ const result = await extractFromFile(file, file.type, {
 
 ---
 
-### BatchExtractBytes()
+### batchExtractBytes()
 
 Extract content from multiple byte arrays in parallel.
 
@@ -442,7 +442,7 @@ for (const result of results) {
 
 ---
 
-### BatchExtractFiles()
+### batchExtractFiles()
 
 Extract content from multiple browser File objects in parallel.
 
@@ -491,7 +491,7 @@ for (const result of results) {
 
 ## Synchronous Extraction Functions
 
-### ExtractBytesSync()
+### extractBytesSync()
 
 Extract content from document bytes synchronously.
 
@@ -534,7 +534,7 @@ console.log(result.content);
 
 ---
 
-### BatchExtractBytesSync()
+### batchExtractBytesSync()
 
 Extract content from multiple byte arrays synchronously.
 
@@ -566,7 +566,7 @@ function batchExtractBytesSync(
 
 ## OCR Functions
 
-### EnableOcr()
+### enableOcr()
 
 Enable OCR functionality with automatic backend selection.
 
@@ -647,13 +647,13 @@ const germanResult = await extractBytes(deImageBytes, 'image/png', {
 
 **Supported Languages (43):**
 
-Eng, deu, fra, spa, ita, por, nld, rus, jpn, kor, chi_sim, chi_tra, pol, tur, swe, dan, fin, nor, ces, slk, ron, hun, hrv, srp, bul, ukr, ell, ara, heb, hin, tha, vie, mkd, ben, tam, tel, kan, mal, mya, khm, lao, sin
+eng, deu, fra, spa, ita, por, nld, rus, jpn, kor, chi_sim, chi_tra, pol, tur, swe, dan, fin, nor, ces, slk, ron, hun, hrv, srp, bul, ukr, ell, ara, heb, hin, tha, vie, mkd, ben, tam, tel, kan, mal, mya, khm, lao, sin
 
 ---
 
 ## OCR Backend Management
 
-### RegisterOcrBackend()
+### registerOcrBackend()
 
 Register a custom OCR backend.
 
@@ -684,7 +684,7 @@ registerOcrBackend(backend);
 
 ---
 
-### GetOcrBackend()
+### getOcrBackend()
 
 Get a registered OCR backend by name.
 
@@ -715,7 +715,7 @@ if (backend) {
 
 ---
 
-### ListOcrBackends()
+### listOcrBackends()
 
 List all registered OCR backends.
 
@@ -727,7 +727,7 @@ function listOcrBackends(): string[]
 
 **Returns:**
 
-- String array type: Array of registered backend names
+- string array type: Array of registered backend names
 
 **Example:**
 
@@ -740,7 +740,7 @@ console.log('Available OCR backends:', backends);
 
 ---
 
-### UnregisterOcrBackend()
+### unregisterOcrBackend()
 
 Unregister an OCR backend.
 
@@ -768,7 +768,7 @@ await unregisterOcrBackend('tesseract-wasm');
 
 ---
 
-### ClearOcrBackends()
+### clearOcrBackends()
 
 Clear all registered OCR backends and call their shutdown methods.
 
@@ -791,7 +791,7 @@ await clearOcrBackends();
 
 ## MIME Type Utilities
 
-### DetectMimeFromBytes()
+### detectMimeFromBytes()
 
 Auto-detect MIME type from file bytes.
 
@@ -821,7 +821,7 @@ console.log(`Detected MIME type: ${mimeType}`);
 
 ---
 
-### GetMimeFromExtension()
+### getMimeFromExtension()
 
 Get MIME type from file extension.
 
@@ -850,7 +850,7 @@ const mimeType2 = getMimeFromExtension('.docx'); // 'application/vnd.openxmlform
 
 ---
 
-### GetExtensionsForMime()
+### getExtensionsForMime()
 
 Get file extensions for a MIME type.
 
@@ -866,7 +866,7 @@ function getExtensionsForMime(mimeType: string): string[]
 
 **Returns:**
 
-- String array type: Array of file extensions (without leading dots)
+- string array type: Array of file extensions (without leading dots)
 
 **Example:**
 
@@ -879,7 +879,7 @@ const extensions2 = getExtensionsForMime('image/jpeg');      // ['jpg', 'jpeg']
 
 ---
 
-### NormalizeMimeType()
+### normalizeMimeType()
 
 Normalize MIME type to canonical form.
 
@@ -910,7 +910,7 @@ const normalized2 = normalizeMimeType('text/plain');      // 'text/plain'
 
 ## Configuration Loading
 
-!!! Warning "Deprecated API"
+!!! warning "Deprecated API"
     The `enable_ocr` parameter has been deprecated in favor of the new `ocr` configuration object.
 
     **Old pattern (no longer supported):**
@@ -930,7 +930,7 @@ const normalized2 = normalizeMimeType('text/plain');      // 'text/plain'
 
     The new approach provides more granular control over OCR behavior through the OCR configuration object.
 
-### LoadConfigFromString()
+### loadConfigFromString()
 
 Load extraction configuration from a string in YAML, JSON, or TOML format.
 
@@ -1001,7 +1001,7 @@ const config = loadConfigFromString(tomlConfig, 'toml');
 
 ## Runtime Detection
 
-### DetectRuntime()
+### detectRuntime()
 
 Detect the current JavaScript runtime environment.
 
@@ -1039,7 +1039,7 @@ switch (runtime) {
 
 ---
 
-### GetWasmCapabilities()
+### getWasmCapabilities()
 
 Get WebAssembly capabilities available in the current runtime.
 
@@ -1082,7 +1082,7 @@ if (caps.hasSharedArrayBuffer) {
 
 ---
 
-### IsBrowser(), isNode(), isDeno(), isBun()
+### isBrowser(), isNode(), isDeno(), isBun()
 
 Check if code is running in a specific runtime.
 
@@ -1115,7 +1115,7 @@ if (isNode()) {
 
 ---
 
-### HasWorkers(), hasSharedArrayBuffer()
+### hasWorkers(), hasSharedArrayBuffer()
 
 Check for specific WASM capabilities.
 
@@ -1148,7 +1148,7 @@ if (!hasWorkers()) {
 
 ## Type Adapter Utilities
 
-### FileToUint8Array()
+### fileToUint8Array()
 
 Convert a File or Blob to Uint8Array.
 
@@ -1184,7 +1184,7 @@ const result = await extractBytes(bytes, file.type);
 
 ---
 
-### ConfigToJS()
+### configToJS()
 
 Normalize ExtractionConfig for WASM processing.
 
@@ -1218,7 +1218,7 @@ const wasmConfig = configToJS(config);
 
 ---
 
-### JsToExtractionResult()
+### jsToExtractionResult()
 
 Parse WASM extraction result and convert to TypeScript type.
 
@@ -1244,7 +1244,7 @@ function jsToExtractionResult(jsValue: unknown): ExtractionResult
 
 ---
 
-### IsValidExtractionResult()
+### isValidExtractionResult()
 
 Validate that a value conforms to ExtractionResult structure.
 
@@ -1924,9 +1924,9 @@ Common MIME types supported by Kreuzberg WASM:
 
 ## PDF Rendering
 
-!!! Info "Added in v4.6.2"
+!!! info "Added in v4.6.2"
 
-### RenderPdfPageSync()
+### renderPdfPageSync()
 
 Render a single page of a PDF as a PNG image (synchronous).
 
@@ -2179,7 +2179,7 @@ const result = await extractBytes(pdfBytes, 'application/pdf');
 
 ## LLM Integration
 
-!!! Warning "Not Available in WASM"
+!!! warning "Not Available in WASM"
 
     LLM integration features (`StructuredExtractionConfig`, VLM OCR, LLM embeddings) are **not available** in the WASM binding. The `liter-llm` crate requires native HTTP networking which is unavailable in WebAssembly environments.
 

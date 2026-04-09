@@ -2,7 +2,7 @@
 
 Complete reference for the Kreuzberg **native TypeScript/Node.js** API (`@kreuzberg/node`).
 
-!!! Info "WASM Alternative"
+!!! info "WASM Alternative"
 
     This reference covers **native bindings** (`@kreuzberg/node`) for Node.js, Bun, and Deno.
 
@@ -26,7 +26,7 @@ pnpm add @kreuzberg/node
 
 ## Core Functions
 
-### BatchExtractBytes()
+### batchExtractBytes()
 
 Extract content from multiple byte arrays in parallel (asynchronous).
 
@@ -50,7 +50,7 @@ Same as [`batchExtractBytesSync()`](#batchextractbytessync).
 
 ---
 
-### BatchExtractBytesSync()
+### batchExtractBytesSync()
 
 Extract content from multiple byte arrays in parallel (synchronous).
 
@@ -76,7 +76,7 @@ function batchExtractBytesSync(
 
 ---
 
-### BatchExtractFiles()
+### batchExtractFiles()
 
 Extract content from multiple files in parallel (asynchronous).
 
@@ -112,7 +112,7 @@ for (const result of results) {
 
 ---
 
-### BatchExtractFilesSync()
+### batchExtractFilesSync()
 
 Extract content from multiple files in parallel (synchronous).
 
@@ -149,7 +149,7 @@ results.forEach((result, i) => {
 
 ---
 
-### BatchExtractFilesWithConfigs() <span class="version-badge">v4.5.0</span>
+### batchExtractFilesWithConfigs() <span class="version-badge">v4.5.0</span>
 
 Extract content from multiple files in parallel, with per-file configuration overrides (asynchronous).
 
@@ -175,7 +175,7 @@ async function batchExtractFilesWithConfigs(
 
 ---
 
-### BatchExtractFilesWithConfigsSync() <span class="version-badge">v4.5.0</span>
+### batchExtractFilesWithConfigsSync() <span class="version-badge">v4.5.0</span>
 
 Synchronous variant of [`batchExtractFilesWithConfigs()`](#batchextractfileswithconfigs).
 
@@ -206,7 +206,7 @@ const results = batchExtractFilesWithConfigsSync(
 
 ---
 
-### BatchExtractBytesWithConfigs() <span class="version-badge">v4.5.0</span>
+### batchExtractBytesWithConfigs() <span class="version-badge">v4.5.0</span>
 
 Extract content from multiple byte arrays in parallel, with per-file configuration overrides (asynchronous).
 
@@ -223,7 +223,7 @@ async function batchExtractBytesWithConfigs(
 
 ---
 
-### BatchExtractBytesWithConfigsSync() <span class="version-badge">v4.5.0</span>
+### batchExtractBytesWithConfigsSync() <span class="version-badge">v4.5.0</span>
 
 Synchronous variant of [`batchExtractBytesWithConfigs()`](#batchextractbyteswithconfigs).
 
@@ -240,7 +240,7 @@ function batchExtractBytesWithConfigsSync(
 
 ---
 
-### ExtractBytes()
+### extractBytes()
 
 Extract content from bytes (asynchronous).
 
@@ -264,7 +264,7 @@ Same as [`extractBytesSync()`](#extractbytessync).
 
 ---
 
-### ExtractBytesSync()
+### extractBytesSync()
 
 Extract content from bytes (synchronous).
 
@@ -301,7 +301,7 @@ console.log(result.content);
 
 ---
 
-### ExtractFile()
+### extractFile()
 
 Extract content from a file (asynchronous).
 
@@ -338,7 +338,7 @@ main();
 
 ---
 
-### ExtractFileSync()
+### extractFileSync()
 
 Extract content from a file (synchronous).
 
@@ -949,7 +949,7 @@ if (result.detectedLanguages) {
 }
 ```
 
-#### Pages
+#### pages
 
 **Type**: `PageContent[] | undefined`
 
@@ -1313,7 +1313,7 @@ console.log(result.content);
 
 ## Embeddings
 
-### EmbedSync()
+### embedSync()
 
 Generate embeddings for a list of texts synchronously.
 
@@ -1336,7 +1336,7 @@ function embedSync(texts: string[], config?: EmbeddingConfig): number[][]
 
 ---
 
-### Embed()
+### embed()
 
 Async variant of `embedSync()`.
 
@@ -1352,9 +1352,9 @@ Same parameters and return type as `embedSync()`.
 
 ## PDF Rendering
 
-!!! Info "Added in v4.6.2"
+!!! info "Added in v4.6.2"
 
-### RenderPdfPageSync()
+### renderPdfPageSync()
 
 Render a single page of a PDF as a PNG image (synchronous).
 
@@ -1606,5 +1606,5 @@ For configuration details, see the [Code Intelligence Guide](../guides/code-inte
 **Platforms:**
 
 - Linux (x64, arm64)
-- MacOS (x64, arm64)
+- macOS (x64, arm64)
 - Windows (x64)

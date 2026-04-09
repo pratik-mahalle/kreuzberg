@@ -91,7 +91,6 @@ jobs:
         run: |
           npm install --no-save \
             textlint \
-            textlint-rule-no-todo \
             textlint-rule-no-start-duplicated-conjunction \
             textlint-rule-no-empty-section \
             textlint-rule-terminology \
@@ -103,7 +102,6 @@ jobs:
             textlint-rule-write-good \
             textlint-rule-common-misspellings \
             textlint-rule-stop-words \
-            textlint-rule-en-capitalization \
             textlint-filter-rule-comments \
             textlint-filter-rule-node-types
 

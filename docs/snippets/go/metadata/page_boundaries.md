@@ -1,11 +1,11 @@
-Package main
+package main
 
-Import (
+import (
     "fmt"
     "Kreuzberg"
 )
 
-Func main() {
+func main() {
     result, _ := kreuzberg.ExtractFileSync("document.pdf", nil)
 
     if result.Metadata.Pages != nil && result.Metadata.Pages.Boundaries != nil {

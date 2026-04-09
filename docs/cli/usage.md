@@ -24,7 +24,7 @@ The Kreuzberg CLI provides command-line access to all extraction features. This 
 
     --8<-- "snippets/cli/install_go_sdk.md"
 
-!!! Info "Feature Availability"
+!!! info "Feature Availability"
 **Homebrew Installation:**
 
     - ✅ Text extraction (PDF, Office, images, 91+ formats)
@@ -836,7 +836,7 @@ kreuzberg embed --text "hello" --preset balanced --format text
 
 Available presets: `fast`, `balanced` (default), `quality`, `multilingual`.
 
-!!! Info "Feature Availability"
+!!! info "Feature Availability"
     The `embed` command requires the `embeddings` feature. It is available in Docker images but not in Homebrew installations.
 
 ## Chunking Command <span class="version-badge">v4.5.2</span>
@@ -901,7 +901,7 @@ kreuzberg api schema
 kreuzberg api schema > openapi.json
 ```
 
-!!! Info "Feature Availability"
+!!! info "Feature Availability"
     The `api` subcommand requires the `api` feature.
 
 ## List Supported Formats <span class="version-badge">v4.5.2</span>

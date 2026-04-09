@@ -837,7 +837,7 @@ IO.inspect(atom)
 
 ## Configuration
 
-!!! Warning "Deprecated API"
+!!! warning "Deprecated API"
     The `force_ocr` parameter has been deprecated in favor of the new `ocr` configuration object.
 
     **Old pattern (no longer supported):**
@@ -1574,7 +1574,7 @@ Validate an OCR backend name.
 
 ## PDF Rendering
 
-!!! Info "Added in v4.6.2"
+!!! info "Added in v4.6.2"
 
 ### Kreuzberg.render_pdf_page/3
 
@@ -2048,7 +2048,7 @@ Warning from the extraction pipeline.
 **Platforms:**
 
 - Linux (x64, arm64)
-- MacOS (x64, arm64)
+- macOS (x64, arm64)
 - Windows (x64)
 
 ---

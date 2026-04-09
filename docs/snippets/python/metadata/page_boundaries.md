@@ -1,8 +1,8 @@
-From Kreuzberg import extract_file_sync, ExtractionConfig
+from Kreuzberg import extract_file_sync, ExtractionConfig
 
-Result = extract_file_sync("document.pdf")
+result = extract_file_sync("document.pdf")
 
-If result.metadata.pages and result.metadata.pages.boundaries:
+if result.metadata.pages and result.metadata.pages.boundaries:
     boundaries = result.metadata.pages.boundaries
     content_bytes = result.content.encode('utf-8')
 

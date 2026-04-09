@@ -118,7 +118,7 @@ Reduce token count for LLM pipelines while preserving meaning:
 
 ## Troubleshooting
 
-??? Question "DLL not found"
+??? question "DLL not found"
 
     Ensure the native library is in your runtime directory at `runtimes/{rid}/native/`.
 
@@ -127,11 +127,11 @@ Reduce token count for LLM pipelines while preserving meaning:
     echo $DYLD_LIBRARY_PATH   # macOS
     ```
 
-??? Question "P/Invoke errors"
+??? question "P/Invoke errors"
 
     Verify: (1) native library is installed, (2) architecture matches (x64/arm64), (3) Tesseract is available if using OCR.
 
-??? Question "OCR not working"
+??? question "OCR not working"
 
     ```bash title="Terminal"
     tesseract --version

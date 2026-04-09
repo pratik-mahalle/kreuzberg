@@ -25,7 +25,7 @@ dependencies {
 **Requirements:**
 
 - Java 25 or later
-- Libkreuzberg_ffi native library (auto-loaded)
+- libkreuzberg_ffi native library (auto-loaded)
 - Optional: Tesseract or EasyOCR/PaddleOCR for OCR functionality
 
 View package on [Maven Central](https://central.sonatype.com/artifact/dev.kreuzberg/kreuzberg).
@@ -34,7 +34,7 @@ View package on [Maven Central](https://central.sonatype.com/artifact/dev.kreuzb
 
 ## Core Functions
 
-### BatchExtractBytes()
+### batchExtractBytes()
 
 Extract content from multiple byte arrays in parallel (synchronous).
 
@@ -123,7 +123,7 @@ ExtractionResult result = Kreuzberg.extractFile("document.pdf", config);
 
 ---
 
-### ExtractBytes()
+### extractBytes()
 
 Extract content from byte array (synchronous).
 
@@ -171,7 +171,7 @@ byte[] docxBytes = /* ... */;
 ExtractionResult result = Kreuzberg.extractBytes(docxBytes, "application/vnd.openxmlformats-officedocument.wordprocessingml.document", config);
 ```
 
-### BatchExtractBytesAsync()
+### batchExtractBytesAsync()
 
 Extract multiple byte arrays in parallel (asynchronous).
 
@@ -190,7 +190,7 @@ public static CompletableFuture<List<ExtractionResult>> batchExtractBytesAsync(
 
 ---
 
-### BatchExtractFiles()
+### batchExtractFiles()
 
 Extract content from multiple files in parallel (synchronous).
 
@@ -214,7 +214,7 @@ public static List<ExtractionResult> batchExtractFiles(List<String> paths, Extra
 
 - `KreuzbergException`: If batch extraction fails
 
-### BatchExtractFilesAsync()
+### batchExtractFilesAsync()
 
 Extract multiple files in parallel (asynchronous).
 
@@ -233,7 +233,7 @@ public static CompletableFuture<List<ExtractionResult>> batchExtractFilesAsync(
 
 ---
 
-### BatchExtractFilesWithConfigs() <span class="version-badge">v4.8.0</span>
+### batchExtractFilesWithConfigs() <span class="version-badge">v4.8.0</span>
 
 Extract multiple files in parallel with per-file configuration overrides (synchronous).
 
@@ -253,7 +253,7 @@ public static List<ExtractionResult> batchExtractFilesWithConfigs(
 
 ---
 
-### BatchExtractBytesWithConfigs() <span class="version-badge">v4.8.0</span>
+### batchExtractBytesWithConfigs() <span class="version-badge">v4.8.0</span>
 
 Extract multiple byte arrays in parallel with per-file configuration overrides (synchronous).
 
@@ -294,7 +294,7 @@ Batch-level fields (`maxConcurrentExtractions`, `useCache`, `acceleration`, `sec
 
 ---
 
-### ClearDocumentExtractors()
+### clearDocumentExtractors()
 
 Remove all registered custom document extractors.
 
@@ -306,7 +306,7 @@ public static void clearDocumentExtractors() throws KreuzbergException
 
 ---
 
-### ClearOCRBackends()
+### clearOCRBackends()
 
 Remove all registered custom OCR backends.
 
@@ -318,7 +318,7 @@ public static void clearOCRBackends() throws KreuzbergException
 
 ---
 
-### ClearPostProcessors()
+### clearPostProcessors()
 
 Remove all registered custom post-processors.
 
@@ -330,7 +330,7 @@ public static void clearPostProcessors() throws KreuzbergException
 
 ---
 
-### ClearValidators()
+### clearValidators()
 
 Remove all registered custom validators.
 
@@ -342,7 +342,7 @@ public static void clearValidators() throws KreuzbergException
 
 ---
 
-### DetectMimeType()
+### detectMimeType()
 
 Detect MIME type from file path or raw bytes.
 
@@ -366,7 +366,7 @@ public static String detectMimeType(byte[] data) throws KreuzbergException
 
 ---
 
-### DetectMimeTypeFromPath()
+### detectMimeTypeFromPath()
 
 Detect MIME type from a file path (alias for `detectMimeType(path, true)`).
 
@@ -378,7 +378,7 @@ public static String detectMimeTypeFromPath(String path) throws KreuzbergExcepti
 
 ---
 
-### DiscoverExtractionConfig()
+### discoverExtractionConfig()
 
 Discover extraction configuration from environment or configuration files.
 
@@ -394,7 +394,7 @@ public static Optional<ExtractionConfig> discoverExtractionConfig() throws Kreuz
 
 ---
 
-### GetEmbeddingPreset()
+### getEmbeddingPreset()
 
 Retrieve details of a specific embedding preset.
 
@@ -406,7 +406,7 @@ public static Optional<EmbeddingPreset> getEmbeddingPreset(String name) throws K
 
 ---
 
-### GetExtensionsForMime()
+### getExtensionsForMime()
 
 Get common file extensions for a given MIME type.
 
@@ -422,7 +422,7 @@ public static List<String> getExtensionsForMime(String mimeType) throws Kreuzber
 
 ---
 
-### GetVersion()
+### getVersion()
 
 Get the current version of the Kreuzberg library.
 
@@ -434,7 +434,7 @@ public static String getVersion()
 
 ---
 
-### ListDocumentExtractors()
+### listDocumentExtractors()
 
 List names of all registered document extractors.
 
@@ -446,7 +446,7 @@ public static List<String> listDocumentExtractors() throws KreuzbergException
 
 ---
 
-### ListEmbeddingPresets()
+### listEmbeddingPresets()
 
 List names of all available embedding presets.
 
@@ -458,7 +458,7 @@ public static List<String> listEmbeddingPresets() throws KreuzbergException
 
 ---
 
-### ListOCRBackends()
+### listOCRBackends()
 
 List names of all registered OCR backends.
 
@@ -470,7 +470,7 @@ public static List<String> listOCRBackends() throws KreuzbergException
 
 ---
 
-### ListPostProcessors()
+### listPostProcessors()
 
 List names of all registered post-processors.
 
@@ -482,7 +482,7 @@ public static List<String> listPostProcessors() throws KreuzbergException
 
 ---
 
-### ListValidators()
+### listValidators()
 
 List names of all registered validators.
 
@@ -494,7 +494,7 @@ public static List<String> listValidators() throws KreuzbergException
 
 ---
 
-### LoadExtractionConfigFromFile()
+### loadExtractionConfigFromFile()
 
 Load extraction configuration from a file.
 
@@ -506,7 +506,7 @@ public static ExtractionConfig loadExtractionConfigFromFile(Path path) throws Kr
 
 ---
 
-### RegisterOcrBackend()
+### registerOcrBackend()
 
 Register a custom OCR backend.
 
@@ -519,7 +519,7 @@ public static void registerOcrBackend(String name, OcrBackend backend, List<Stri
 
 ---
 
-### RegisterPostProcessor()
+### registerPostProcessor()
 
 Register a custom post-processor.
 
@@ -532,7 +532,7 @@ public static void registerPostProcessor(String name, PostProcessor processor, i
 
 ---
 
-### RegisterValidator()
+### registerValidator()
 
 Register a custom validator.
 
@@ -545,7 +545,7 @@ public static void registerValidator(String name, Validator validator, int prior
 
 ---
 
-### UnregisterDocumentExtractor()
+### unregisterDocumentExtractor()
 
 Unregister a document extractor by name.
 
@@ -557,7 +557,7 @@ public static void unregisterDocumentExtractor(String name) throws KreuzbergExce
 
 ---
 
-### UnregisterOCRBackend()
+### unregisterOCRBackend()
 
 Unregister an OCR backend by name.
 
@@ -569,7 +569,7 @@ public static void unregisterOCRBackend(String name) throws KreuzbergException
 
 ---
 
-### UnregisterPostProcessor()
+### unregisterPostProcessor()
 
 Unregister a post-processor by name.
 
@@ -581,7 +581,7 @@ public static void unregisterPostProcessor(String name) throws KreuzbergExceptio
 
 ---
 
-### UnregisterValidator()
+### unregisterValidator()
 
 Unregister a validator by name.
 
@@ -593,7 +593,7 @@ public static void unregisterValidator(String name) throws KreuzbergException
 
 ---
 
-### ValidateMimeType()
+### validateMimeType()
 
 Validate a MIME type string and return its normalized form.
 
@@ -990,7 +990,7 @@ for (Chunk chunk : result.getChunks()) {
 }
 ```
 
-#### Pages
+#### pages
 
 **Type**: `List<PageContent>`
 
@@ -1541,7 +1541,7 @@ Kreuzberg.clearOCRBackends();
 
 ## MIME Type Detection
 
-### DetectMimeType()
+### detectMimeType()
 
 Detect MIME type from file or bytes.
 
@@ -1570,7 +1570,7 @@ String mimeType = Kreuzberg.detectMimeType(data);
 
 ---
 
-### ValidateMimeType()
+### validateMimeType()
 
 Validate and normalize a MIME type string.
 
@@ -1590,7 +1590,7 @@ System.out.println(validated); // "application/pdf"
 
 ---
 
-### GetExtensionsForMime()
+### getExtensionsForMime()
 
 Get file extensions for a given MIME type.
 
@@ -1616,7 +1616,7 @@ System.out.println(extensions); // ["jpg", "jpeg"]
 
 ## Embeddings
 
-### Embed()
+### embed()
 
 Generate embeddings for a list of texts synchronously.
 
@@ -1641,7 +1641,7 @@ public static float[][] embed(List<String> texts, EmbeddingConfig config) throws
 
 ---
 
-### EmbedAsync()
+### embedAsync()
 
 Async variant of `embed()`. Returns a `CompletableFuture` that resolves to the embedding vectors.
 
@@ -1655,7 +1655,7 @@ Same parameters and return type as `embed()`, wrapped in a `CompletableFuture`.
 
 ---
 
-### GetEmbeddingPreset()
+### getEmbeddingPreset()
 
 Get embedding preset configuration by name.
 
@@ -1679,7 +1679,7 @@ if (preset.isPresent()) {
 
 ---
 
-### ListEmbeddingPresets()
+### listEmbeddingPresets()
 
 List all available embedding presets.
 
@@ -1703,7 +1703,7 @@ for (String preset : presets) {
 
 ## PDF Rendering
 
-!!! Info "Added in v4.8.0"
+!!! info "Added in v4.8.0"
 
 ### Kreuzberg.renderPdfPage()
 
@@ -1884,7 +1884,7 @@ try {
 
 ## Utility Methods
 
-### GetVersion()
+### getVersion()
 
 Get the Kreuzberg library version.
 

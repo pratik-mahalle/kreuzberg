@@ -7,7 +7,7 @@ Kreuzberg provides 8 core extraction functions organized by input type (file pat
 | **File path** | `extract_file_sync` | `extract_file` | `batch_extract_files_sync` | `batch_extract_files` |
 | **Bytes** | `extract_bytes_sync` | `extract_bytes` | `batch_extract_bytes_sync` | `batch_extract_bytes` |
 
-!!! Tip "Sync vs Async"
+!!! tip "Sync vs Async"
     Use async variants when you're already in an async context or processing multiple files concurrently. For scripts and simple pipelines, sync variants are simpler and just as fast for single files.
 
 ## Extract from Files
@@ -465,7 +465,7 @@ All extraction functions raise typed exceptions on failure. Catch specific excep
 
     --8<-- "snippets/wasm/api/error_handling_wasm.md"
 
-!!! Warning "System Errors"
+!!! warning "System Errors"
     `OSError` (Python), `IOException` (Rust), and system-level errors always propagate through. These indicate real system problems (permissions, disk space, etc.) that your application should handle.
 
 ## Next Steps

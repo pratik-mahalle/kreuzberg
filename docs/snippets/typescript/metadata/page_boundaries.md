@@ -1,12 +1,12 @@
-Import { extractFileSync } from '@kreuzberg/node';
+import { extractFileSync } from '@kreuzberg/node';
 
-Const result = extractFileSync('document.pdf');
+const result = extractFileSync('document.pdf');
 
-If (result.metadata.page_structure?.boundaries) {
+if (result.metadata.page_structure?.boundaries) {
   const encoder = new TextEncoder();
   const contentBytes = encoder.encode(result.content);
 
-  For (const boundary of result.metadata.page_structure.boundaries.slice(0, 3)) {
+  for (const boundary of result.metadata.page_structure.boundaries.slice(0, 3)) {
     const pageBytes = contentBytes.slice(boundary.byteStart, boundary.byteEnd);
     const pageText = new TextDecoder().decode(pageBytes);
 

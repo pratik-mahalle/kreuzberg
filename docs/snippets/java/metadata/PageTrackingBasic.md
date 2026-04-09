@@ -1,4 +1,4 @@
-Import dev.kreuzberg.*;
+import dev.kreuzberg.*;
 
 var config = ExtractionConfig.builder()
     .pages(PageConfig.builder()
@@ -8,7 +8,7 @@ var config = ExtractionConfig.builder()
 
 var result = Kreuzberg.extractFileSync("document.pdf", config);
 
-If (result.pages() != null) {
+if (result.pages() != null) {
     for (var page : result.pages()) {
         System.out.println("Page " + page.pageNumber() + ":");
         System.out.println("  Content: " + page.content().length() + " chars");

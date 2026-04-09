@@ -284,7 +284,7 @@ result = Kreuzberg.extract_file_sync("document.pdf", config: config)
 
 ### Kreuzberg::Config::Extraction
 
-!!! Warning "Deprecated API"
+!!! warning "Deprecated API"
     The `force_ocr` parameter has been deprecated in favor of the new `ocr` configuration object.
 
     **Old pattern (no longer supported):**
@@ -394,7 +394,7 @@ if result.detected_languages
 end
 ```
 
-#### Pages
+#### pages
 
 **Type**: `Array<Hash> | nil`
 
@@ -579,7 +579,7 @@ end
 
 ## Embeddings
 
-### Embed_sync()
+### embed_sync()
 
 Generate embeddings for a list of texts.
 
@@ -602,7 +602,7 @@ Kreuzberg.embed_sync(texts:, config: nil) -> Array<Array<Float>>
 
 ---
 
-### Embed()
+### embed()
 
 Blocking async variant of `embed_sync()`. Uses the same call path; provided for API symmetry.
 
@@ -618,7 +618,7 @@ Same parameters and return type as `embed_sync()`.
 
 ## PDF Rendering
 
-!!! Info "Added in v4.6.2"
+!!! info "Added in v4.6.2"
 
 ### Kreuzberg.render_pdf_page
 
@@ -806,7 +806,7 @@ mcp.start
 **Platforms:**
 
 - Linux (x64, arm64)
-- MacOS (x64, arm64)
+- macOS (x64, arm64)
 - Windows (x64)
 
 ---

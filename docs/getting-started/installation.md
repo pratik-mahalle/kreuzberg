@@ -8,7 +8,7 @@ Kreuzberg ships native bindings for 12 languages and a standalone CLI. Pick your
 
 Every package includes **prebuilt binaries** for Linux (x86_64 / aarch64), macOS (Apple Silicon), and Windows — no compile step needed.
 
-!!! Warning "Windows — ONNX Runtime required for Go, Elixir, and C/C++"
+!!! warning "Windows — ONNX Runtime required for Go, Elixir, and C/C++"
     Go, Elixir, and C/C++ bindings on Windows link against ONNX Runtime dynamically. You must have `onnxruntime.dll` on your `PATH` at runtime. Download it from the [ONNX Runtime releases](https://github.com/microsoft/onnxruntime/releases) (for example `onnxruntime-win-x64-1.24.1.zip`). Python, TypeScript, Java, C#, Ruby, PHP, and WASM are unaffected.
 
 <div class="cli-hero" markdown>
@@ -226,12 +226,12 @@ Two npm packages target different runtimes:
 
 Both work with **pnpm** (`pnpm add`) and **yarn** (`yarn add`) as well.
 
-!!! Note "pnpm workspaces"
+!!! note "pnpm workspaces"
     In monorepos, add this to your root `.npmrc` so platform-specific optional deps resolve correctly:
     ```ini
     auto-install-peers=true```
 
-??? Example "WASM — Browser usage"
+??? example "WASM — Browser usage"
     ```html
     <script type="module">
       import { initWasm, extractFromFile } from "@kreuzberg/wasm";
@@ -247,7 +247,7 @@ Both work with **pnpm** (`pnpm add`) and **yarn** (`yarn add`) as well.
     <input type="file" id="file" />
     ```
 
-??? Example "WASM — Deno"
+??? example "WASM — Deno"
     ```typescript
     import { initWasm, extractFile } from "npm:@kreuzberg/wasm";
 
@@ -256,7 +256,7 @@ Both work with **pnpm** (`pnpm add`) and **yarn** (`yarn add`) as well.
     console.log(result.content);
     ```
 
-??? Example "WASM — Cloudflare Workers"
+??? example "WASM — Cloudflare Workers"
     ```typescript
     import { initWasm, extractBytes } from "@kreuzberg/wasm";
 
@@ -272,7 +272,7 @@ Both work with **pnpm** (`pnpm add`) and **yarn** (`yarn add`) as well.
 
 **Supported runtimes:** Chrome 74+, Firefox 79+, Safari 14+, Edge 79+, Node.js 22+, Deno 1.35+, Cloudflare Workers.
 
-!!! Warning "WASM Platform Limitations"
+!!! warning "WASM Platform Limitations"
     The WASM binding does not support:
 
     - **Layout detection** (RT-DETR model inference requires ONNX Runtime unavailable in WebAssembly)
@@ -320,7 +320,7 @@ mix deps.get
 
 Ships prebuilt NIF binaries via RustlerPrecompiled. Falls back to compiling from source if no prebuilt matches your platform (requires Rust).
 
-!!! Warning "Windows"
+!!! warning "Windows"
     The Windows NIF links against ONNX Runtime dynamically. `onnxruntime.dll` must be on your `PATH` at runtime — see the note at the top of this page.
 
 ### Go
@@ -329,10 +329,10 @@ Ships prebuilt NIF binaries via RustlerPrecompiled. Falls back to compiling from
 go get github.com/kreuzberg-dev/kreuzberg/packages/go/v4@latest
 ```
 
-!!! Warning "Windows"
+!!! warning "Windows"
     The Go binding links against ONNX Runtime dynamically on Windows. `onnxruntime.dll` must be on your `PATH` at runtime — see the note at the top of this page.
 
-!!! Note "Windows feature limitations"
+!!! note "Windows feature limitations"
     The Go and C/C++ bindings on Windows (MinGW/GNU target) do not include **PaddleOCR**, **layout detection**, or **auto-rotate**. Tesseract OCR and all other features work normally. These limitations apply only to Windows; Linux and macOS builds include the full feature set.
 
 ### Rust
@@ -366,11 +366,11 @@ my_app: my_app.c
 	$(CC) $(CFLAGS) -o $@ $< $(LDFLAGS)
 ```
 
-!!! Tip "Platform-specific linker flags"
+!!! tip "Platform-specific linker flags"
     **macOS:** add `-framework CoreFoundation -framework Security`
     **Windows:** add `-lws2_32 -luserenv -lbcrypt`
 
-!!! Warning "Windows"
+!!! warning "Windows"
     The Windows FFI library links against ONNX Runtime dynamically. `onnxruntime.dll` must be on your `PATH` at runtime — see the note at the top of this page.
 
 [API Reference →](../reference/api-c.md)
